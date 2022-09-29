@@ -1,5 +1,5 @@
 const container = document.createElement("div");
-container.classList.add("container")
+container.classList.add("container");
 document.body.appendChild(container);
 
 
@@ -20,4 +20,8 @@ for (const box of boxes) {
     box.classList.add('permahover');
     });
 };
+
+const button = document.createElement("button");
+button.classList.add("btn1");
+document.body.insertBefore(button, container);
 
