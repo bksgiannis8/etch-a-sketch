@@ -12,3 +12,12 @@ for (let i=0; i<16; i++) {
         container.appendChild(square);
     }    
 }
+
+const boxes = document.getElementsByClassName('square');
+for (const box of boxes) {
+    box.addEventListener('mouseover', () => {
+    console.log("mouseover");
+    box.classList.add('permahover');
+    });
+};
+
