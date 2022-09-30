@@ -1,36 +1,34 @@
-.square {
-    background-color: blue;
-    /*border-style: solid;
-    border-width: 5px;*/
-    border-color: red;
-    height: 30px;
-    width: auto;
+body {
+    box-sizing: border-box;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .container {
-    background-color: white;
+    width: 700px;
+    height: 700px;
     display: grid;
-    width: 50%;
-    height: 50%;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    margin: 2rem;
+    border: 2px solid burlywood;
 }
 
-.newContainer {
-    background-color: white;
-    display: grid;
-    width: 50%;
-    height: 50%;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+
+h1 {
+    text-align: center;
 }
 
-.permahover {
-    background-color: black;
-  }
-
-.btn1 {
-    background-color: grey;
-    height: 50px;
+button {
     width: 150px;
+    height: 75px;
+
 }
+
+
