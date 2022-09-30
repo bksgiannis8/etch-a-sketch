@@ -13,16 +13,23 @@ button.appendChild(para);
 
 
 function createSpace(size) {
+    //creates draw space
     container.style.gridTemplateRows = `repeat(${size}, 1fr)`;
     container.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
 
-    for (let j=0; j<16; j++) {
+    for (let i=0; i<size*size; i++) {
+        //creates square elements and appoints them to alement container
         let square = document.createElement('div');
         container.appendChild(square);
-        square.addEventListener('mouseover', e =>{
-        square.style.backgroundColor = "white";
-        square.classList.add("permahover");
+        square.addEventListener('mouseover', () =>{
+            square.style.backgroundColor = "black";
         })
+        function clearSpace() {
+            button.addEventListener('click', e => {
+                square.style.backgroundColor = "white";
+            })
+        }
+        clearSpace();
     }   
 }
 
@@ -34,32 +41,20 @@ for (const box of boxes) {
     });
 };
 
-
-
-
-
-
-
-
-
 button.addEventListener("click", () => {
-    let number=prompt("Please enter number of boxes by row or column");
-    document.body.removeChild(container)
-    const container=document.createElement("div")
-    document.body.appendChild(ontainer);
-    container.classList.add("container");
-    for (let i=0; i<newBoxes; i++) {
-        for (let j=0; j<newBoxes; j++) {
-            let square = document.createElement('div');
-            square.setAttribute("grid-column", j + " / span 1");
-            square.setAttribute("grid-row", i + " / span 1");
-            square.setAttribute("class", "square");
-            container.appendChild(square);
-            container.style.setProperty('grid-template-columns', 'repeat(' + newBoxes + ', 1fr)');
-            container.style.setProperty('grid-template-rows', 'repeat(' + newBoxes + ', 1fr)');
-        }       
-    }
-    
+    // make button reset the draw area and make new one
+    resetSpace() 
 })
+
+function resetSpace() {
+    let number = prompt("Please enter new space size");
+    container.style.gridTemplateRows = `repeat(${number}, 1fr)`;
+    container.style.gridTemplateColumns = `repeat(${number}, 1fr)`;
+    createSpace(number); // call the createGrid function here and pass the number they entered as the argument. 
+}
+
+createSpace(16);
+
+
 
 
