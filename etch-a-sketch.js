@@ -48,6 +48,8 @@ button.addEventListener("click", () => {
             square.setAttribute("grid-row", i + " / span 1");
             square.setAttribute("class", "square");
             newContainer.appendChild(square);
+            newContainer.style.setProperty('grid-template-columns', 'repeat(' + newBoxes + ', 1fr)');
+            newContainer.style.setProperty('grid-template-rows', 'repeat(' + newBoxes + ', 1fr)');
         }       
     }
     document.body.removeChild(container)
