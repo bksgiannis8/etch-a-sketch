@@ -30,19 +30,25 @@ const node = document.createTextNode("Click me to specify boxes");
 para.appendChild(node);
 button.appendChild(para);
 
-button.addEventListener("click", togglePopup());
 
-function togglePopup() {
+
+
+
+
+
+button.addEventListener("click", () => {
     let newBoxes=prompt("Please enter number of boxes by row or column");
-    square.remove();
+    const newContainer=document.createElement("div")
+    document.body.appendChild(newContainer);
+    newContainer.classList.add("container");
     for (let i=0; i<newBoxes; i++) {
         for (let j=0; j<newBoxes; j++) {
             let square = document.createElement('div');
             square.setAttribute("grid-column", j + " / span 1");
             square.setAttribute("grid-row", i + " / span 1");
             square.setAttribute("class", "square");
-            container.appendChild(square);
-        }    
+            newContainer.appendChild(square);
+        }       
     }
-}
-
+    document.body.removeChild(container)
+})
