@@ -44,7 +44,5 @@ function togglePopup() {
             container.appendChild(square);
         }    
     }
-    let newCont = document.querySelector("container")
-
 }
 
