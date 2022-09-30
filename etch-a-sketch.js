@@ -38,19 +38,20 @@ button.appendChild(para);
 
 button.addEventListener("click", () => {
     let newBoxes=prompt("Please enter number of boxes by row or column");
-    const newContainer=document.createElement("div")
-    document.body.appendChild(newContainer);
-    newContainer.classList.add("container");
+    document.body.removeChild(container)
+    const container=document.createElement("div")
+    document.body.appendChild(container);
+    container.classList.add("container");
     for (let i=0; i<newBoxes; i++) {
         for (let j=0; j<newBoxes; j++) {
             let square = document.createElement('div');
             square.setAttribute("grid-column", j + " / span 1");
             square.setAttribute("grid-row", i + " / span 1");
             square.setAttribute("class", "square");
-            newContainer.appendChild(square);
-            newContainer.style.setProperty('grid-template-columns', 'repeat(' + newBoxes + ', 1fr)');
-            newContainer.style.setProperty('grid-template-rows', 'repeat(' + newBoxes + ', 1fr)');
+            container.appendChild(square);
+            container.style.setProperty('grid-template-columns', 'repeat(' + newBoxes + ', 1fr)');
+            container.style.setProperty('grid-template-rows', 'repeat(' + newBoxes + ', 1fr)');
         }       
     }
-    document.body.removeChild(container)
+    
 })
