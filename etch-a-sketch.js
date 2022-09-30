@@ -22,7 +22,11 @@ function createSpace(size) {
         let square = document.createElement('div');
         container.appendChild(square);
         square.addEventListener('mouseover', () =>{
-            square.style.backgroundColor = "black";
+            let x = Math.floor(Math.random() * 256);
+            let y = Math.floor(Math.random() * 256);
+            let z = Math.floor(Math.random() * 256);
+            let bgColor = "rgb(" + x + "," + y + "," + z + ")";
+            square.style.backgroundColor = bgColor;
         })
         function clearSpace() {
             button.addEventListener('click', e => {
@@ -54,6 +58,8 @@ function resetSpace() {
 }
 
 createSpace(16);
+
+
 
 
 
