@@ -59,6 +59,7 @@ function resetSpace() {
 
 createSpace(16);
 
+const a  = "blablabla"
 
 
 
