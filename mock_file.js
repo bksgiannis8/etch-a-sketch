@@ -1,1 +1,1 @@
-const mock = "This is a mock variable";
+const mock = "This a";
